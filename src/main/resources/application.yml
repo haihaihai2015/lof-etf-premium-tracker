@@ -1,0 +1,59 @@
+spring:
+  application:
+    name: etf-monitor
+  datasource:
+    url: jdbc:mysql://localhost:3306/etf_monitor?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai&characterEncoding=UTF-8&createDatabaseIfNotExist=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:123456}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+  h2:
+    console:
+      enabled: false
+      path: /h2-console
+server:
+  port: 8080
+
+app:
+  cors:
+    allowed-origins: http://localhost:5173,http://172.168.214.252:5173
+  schedule:
+    market-refresh-ms: 60000
+    minute-snapshot-ms: 60000
+  market:
+    provider-mode: real
+    zone-id: Asia/Shanghai
+    morning-start: "09:30"
+    morning-end: "11:30"
+    afternoon-start: "13:00"
+    afternoon-end: "15:00"
+    eastmoney:
+      trend-url: https://push2.eastmoney.com/api/qt/stock/trends2/get
+      nav-url: https://fundmobapi.eastmoney.com/FundMApi/FundNetDiagram.ashx
+      fund-base-url: https://fundmobapi.eastmoney.com/FundMApi/FundBaseTypeInformation.ashx
+      timeout-ms: 8000
+      nav-cache-minutes: 60
+      max-nav-fetch-per-cycle: 2000
+      max-detail-fetch-per-cycle: 2000
+    sina:
+      quote-url: https://hq.sinajs.cn/
+      node-url: https://vip.stock.finance.sina.com.cn/quotes_service/api/json_v2.php/Market_Center.getHQNodeDataSimple
+      etf-node: etf_hq_fund
+      lof-node: lof_hq_fund
+      universe-page-size: 200
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: never

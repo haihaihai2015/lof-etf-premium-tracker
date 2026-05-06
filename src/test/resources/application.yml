@@ -1,0 +1,23 @@
+app:
+  schedule:
+    market-refresh-ms: 5000
+    minute-snapshot-ms: 60000
+  market:
+    provider-mode: mock
+    zone-id: Asia/Shanghai
+    morning-start: "09:30"
+    morning-end: "11:30"
+    afternoon-start: "13:00"
+    afternoon-end: "15:00"
+    eastmoney:
+      trend-url: https://push2.eastmoney.com/api/qt/stock/trends2/get
+      timeout-ms: 8000
+      nav-url: https://fundmobapi.eastmoney.com/FundMApi/FundNetDiagram.ashx
+      nav-cache-minutes: 60
+      max-nav-fetch-per-cycle: 5
+    sina:
+      quote-url: https://hq.sinajs.cn/
+      node-url: https://vip.stock.finance.sina.com.cn/quotes_service/api/json_v2.php/Market_Center.getHQNodeDataSimple
+      etf-node: etf_hq_fund
+      lof-node: lof_hq_fund
+      universe-page-size: 50
