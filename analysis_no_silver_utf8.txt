@@ -1,0 +1,206 @@
+﻿Testing all LOFs excluding ['161226']
+
+==================================================================================================================================
+1. PREMIUM THRESHOLD SWEEP (excludeQDII=True, requireSubscribe=True, slippage=0.3%, turnover>=500万)
+==================================================================================================================================
+  threshold= 1%  trades= 284  win= 41.9%  return=   14.00%  maxDD= 10.8%  avgHold= 3.2d  profit=   13996  util= 3.8%
+  threshold= 2%  trades= 141  win= 39.7%  return=   18.92%  maxDD=  8.0%  avgHold= 3.1d  profit=   18925  util= 2.0%
+  threshold= 3%  trades= 101  win= 41.6%  return=    8.55%  maxDD= 12.9%  avgHold= 3.1d  profit=    8555  util= 1.4%
+  threshold= 5%  trades=  62  win= 41.9%  return=    9.96%  maxDD= 11.1%  avgHold= 3.3d  profit=    9961  util= 0.9%
+  threshold= 8%  trades=  38  win= 36.8%  return=    6.68%  maxDD=  8.3%  avgHold= 3.4d  profit=    6685  util= 0.5%
+  threshold=10%  trades=  29  win= 24.1%  return=   -1.83%  maxDD= 12.5%  avgHold= 3.9d  profit=   -1827  util= 0.4%
+  threshold=15%  trades=  16  win= 31.3%  return=   -2.76%  maxDD= 11.9%  avgHold= 3.8d  profit=   -2755  util= 0.2%
+  threshold=20%  trades=   8  win= 50.0%  return=   -0.50%  maxDD=  8.2%  avgHold= 3.5d  profit=    -501  util= 0.1%
+
+==================================================================================================================================
+2. THRESHOLD SWEEP (excludeQDII=False, requireSubscribe=True, slippage=0.3%, turnover>=500万)
+   -- Include QDII to expand universe --
+==================================================================================================================================
+  threshold= 1%  trades=1719  win= 59.5%  return=  964.02%  maxDD= 10.2%  avgHold= 3.0d  profit=  964023  util=50.5%
+  threshold= 2%  trades= 980  win= 66.0%  return= 1709.30%  maxDD= 10.2%  avgHold= 3.0d  profit= 1709297  util=48.7%
+  threshold= 3%  trades= 645  win= 69.8%  return= 1342.70%  maxDD= 10.3%  avgHold= 3.1d  profit= 1342705  util=30.1%
+  threshold= 5%  trades= 327  win= 73.4%  return= 1169.49%  maxDD= 12.2%  avgHold= 3.0d  profit= 1169489  util=17.7%
+  threshold= 8%  trades= 168  win= 68.5%  return=  407.40%  maxDD= 12.0%  avgHold= 3.1d  profit=  407401  util= 5.1%
+  threshold=10%  trades= 121  win= 62.8%  return=  232.79%  maxDD=  7.2%  avgHold= 3.3d  profit=  232785  util= 2.8%
+  threshold=15%  trades=  62  win= 61.3%  return=  131.72%  maxDD=  8.8%  avgHold= 3.4d  profit=  131718  util= 1.2%
+  threshold=20%  trades=  38  win= 71.1%  return=   93.11%  maxDD=  8.7%  avgHold= 3.4d  profit=   93107  util= 0.7%
+
+==================================================================================================================================
+3. THRESHOLD SWEEP (excludeQDII=False, requireSubscribe=False, slippage=0.3%, turnover>=500万)
+   -- Most permissive --
+==================================================================================================================================
+  threshold= 1%  trades=2640  win= 68.9%  return=1146059.17%  maxDD=  2.5%  avgHold= 3.1d  profit=1146059170  util=10331.1%
+  threshold= 2%  trades=1753  win= 76.6%  return=2796814.62%  maxDD=  5.1%  avgHold= 3.1d  profit=2796814617  util=19605.0%
+  threshold= 3%  trades=1314  win= 82.3%  return=3056180.73%  maxDD=  5.2%  avgHold= 3.1d  profit=3056180732  util=19724.7%
+  threshold= 5%  trades= 823  win= 87.5%  return=1910287.85%  maxDD=  7.3%  avgHold= 3.1d  profit=1910287852  util=11077.3%
+  threshold= 8%  trades= 499  win= 89.2%  return=463707.95%  maxDD=  6.9%  avgHold= 3.0d  profit=463707945  util=2414.8%
+  threshold=10%  trades= 373  win= 87.1%  return=169624.31%  maxDD=  3.1%  avgHold= 3.1d  profit=169624310  util=830.2%
+  threshold=15%  trades= 214  win= 88.3%  return=21335.73%  maxDD=  7.3%  avgHold= 3.1d  profit=21335730  util=83.1%
+  threshold=20%  trades= 129  win= 90.7%  return= 4675.99%  maxDD=  7.3%  avgHold= 3.1d  profit= 4675988  util=16.1%
+
+==================================================================================================================================
+4. TURNOVER FILTER (threshold=5%, slippage=0.3%, excludeQDII=False, requireSubscribe=True)
+==================================================================================================================================
+  turnover>=    0万  trades=1577  win= 67.8%  return=17574.58%  maxDD= 13.1%  avgHold= 3.1d  profit=17574577  util=418.1%
+  turnover>=  100万  trades= 474  win= 70.9%  return= 2539.55%  maxDD= 13.7%  avgHold= 3.0d  profit= 2539547  util=43.3%
+  turnover>=  300万  trades= 366  win= 71.6%  return= 1528.65%  maxDD= 12.2%  avgHold= 3.0d  profit= 1528651  util=23.0%
+  turnover>=  500万  trades= 327  win= 73.4%  return= 1169.49%  maxDD= 12.2%  avgHold= 3.0d  profit= 1169489  util=17.7%
+  turnover>= 1000万  trades= 272  win= 76.1%  return=  878.61%  maxDD= 10.6%  avgHold= 3.1d  profit=  878613  util=12.4%
+  turnover>= 2000万  trades= 231  win= 76.2%  return=  656.29%  maxDD= 10.6%  avgHold= 3.1d  profit=  656289  util= 9.2%
+  turnover>= 5000万  trades= 162  win= 77.2%  return=  399.85%  maxDD= 10.0%  avgHold= 3.1d  profit=  399852  util= 5.2%
+
+==================================================================================================================================
+5. SLIPPAGE SENSITIVITY (threshold=5%, turnover>=500万, excludeQDII=False, requireSubscribe=True)
+==================================================================================================================================
+  slippage=0.0%  trades= 327  win= 76.1%  return= 1392.74%  maxDD= 11.8%  avgHold= 3.0d  profit= 1392739  util=19.8%
+  slippage=0.1%  trades= 327  win= 74.6%  return= 1314.30%  maxDD= 11.9%  avgHold= 3.0d  profit= 1314299  util=19.1%
+  slippage=0.3%  trades= 327  win= 73.4%  return= 1169.49%  maxDD= 12.2%  avgHold= 3.0d  profit= 1169489  util=17.7%
+  slippage=0.5%  trades= 327  win= 71.9%  return= 1039.41%  maxDD= 12.4%  avgHold= 3.0d  profit= 1039414  util=16.4%
+  slippage=1.0%  trades= 327  win= 69.4%  return=  769.27%  maxDD= 12.9%  avgHold= 3.0d  profit=  769274  util=13.6%
+  slippage=1.5%  trades= 327  win= 66.7%  return=  562.84%  maxDD= 13.5%  avgHold= 3.0d  profit=  562840  util=11.4%
+  slippage=2.0%  trades= 327  win= 64.5%  return=  405.17%  maxDD= 14.1%  avgHold= 3.0d  profit=  405169  util= 9.5%
+
+==================================================================================================================================
+6. PER-TRADE AMOUNT (threshold=5%, slippage=0.3%, turnover>=500万, excludeQDII=False, requireSub=True)
+==================================================================================================================================
+  perTrade= auto   trades= 327  win= 73.4%  return= 1169.49%  maxDD= 12.2%  avgHold= 3.0d  profit= 1169489  util=17.7%
+  perTrade=  5000  trades= 345  win= 70.4%  return=   78.84%  maxDD=  6.4%  avgHold= 3.1d  profit=   78839  util= 1.4%
+  perTrade= 10000  trades= 341  win= 71.0%  return=  160.30%  maxDD=  6.3%  avgHold= 3.0d  profit=  160298  util= 2.8%
+  perTrade= 20000  trades= 337  win= 71.2%  return=  313.67%  maxDD=  9.1%  avgHold= 3.1d  profit=  313675  util= 5.6%
+  perTrade= 50000  trades= 331  win= 72.8%  return=  775.39%  maxDD= 10.0%  avgHold= 3.1d  profit=  775390  util=13.3%
+
+==================================================================================================================================
+7. ROBUSTNESS: TIME PERIOD TESTS (threshold=5%, slippage=0.3%, turnover>=500万, exclQDII=F, reqSub=T)
+==================================================================================================================================
+  2021H2-2022H1    trades=  46  win= 58.7%  return=   17.10%  maxDD=  8.6%  avgHold= 2.9d  profit=   17105  util= 3.0%
+  2022H2-2023      trades=  25  win= 76.0%  return=   12.70%  maxDD=  4.7%  avgHold= 2.5d  profit=   12699  util= 1.3%
+  2024-2025H1      trades= 142  win= 73.9%  return=  285.19%  maxDD= 10.4%  avgHold= 3.2d  profit=  285193  util=14.2%
+  2025H2-2026      trades= 114  win= 78.1%  return=  149.72%  maxDD= 12.2%  avgHold= 3.0d  profit=  149721  util=12.9%
+  First 2.5yr      trades=  71  win= 64.8%  return=   31.98%  maxDD=  8.6%  avgHold= 2.8d  profit=   31976  util= 2.2%
+  Last 2.3yr       trades= 256  win= 75.8%  return=  861.91%  maxDD= 12.2%  avgHold= 3.1d  profit=  861907  util=27.0%
+  FULL 5yr         trades= 327  win= 73.4%  return= 1169.49%  maxDD= 12.2%  avgHold= 3.0d  profit= 1169489  util=17.7%
+
+==================================================================================================================================
+8. ROBUSTNESS: TIME PERIOD TESTS (threshold=3%, slippage=0.3%, turnover>=100万, exclQDII=F, reqSub=F)
+   -- More aggressive, more permissive --
+==================================================================================================================================
+  2021H2-2022H1    trades= 311  win= 66.2%  return=  190.86%  maxDD= 11.9%  avgHold= 2.9d  profit=  190860  util=25.2%
+  2022H2-2023      trades= 425  win= 88.0%  return= 2438.75%  maxDD=  1.2%  avgHold= 2.8d  profit= 2438754  util=69.9%
+  2024-2025H1      trades= 786  win= 83.6%  return=40979.04%  maxDD=  7.3%  avgHold= 3.2d  profit=40979035  util=1573.4%
+  2025H2-2026      trades= 452  win= 80.8%  return= 3116.39%  maxDD=  5.2%  avgHold= 3.1d  profit= 3116391  util=121.9%
+  First 2.5yr      trades= 739  win= 78.6%  return= 7265.10%  maxDD=  1.2%  avgHold= 2.9d  profit= 7265101  util=125.9%
+  Last 2.3yr       trades=1239  win= 82.5%  return=1319694.07%  maxDD=  5.2%  avgHold= 3.2d  profit=1319694072  util=18974.7%
+  FULL 5yr         trades=1982  win= 81.1%  return=102984327.28%  maxDD=  5.2%  avgHold= 3.1d  profit=102984327284  util=686446.2%
+
+==================================================================================================================================
+9. STRATEGY PROFILES (FULL 5yr)
+==================================================================================================================================
+  Safe-HighPrem         trades=   4  win= 25.0%  return=   -0.67%  maxDD=  2.8%  avgHold= 3.0d  profit=    -675  util= 0.0%
+  Safe-HighPrem+Q       trades=  39  win= 61.5%  return=   39.65%  maxDD=  9.9%  avgHold= 3.5d  profit=   39648  util= 0.3%
+  Balanced              trades=  29  win= 24.1%  return=   -2.55%  maxDD=  9.4%  avgHold= 3.9d  profit=   -2553  util= 0.2%
+  Balanced+QDII         trades= 121  win= 62.8%  return=   80.04%  maxDD=  9.0%  avgHold= 3.3d  profit=   80042  util= 1.0%
+  Active                trades= 341  win= 71.0%  return=  160.30%  maxDD=  6.3%  avgHold= 3.0d  profit=  160298  util= 2.8%
+  Active-NoFilter       trades= 491  win= 69.5%  return=  214.52%  maxDD=  7.3%  avgHold= 3.1d  profit=  214518  util= 4.1%
+  Aggressive            trades= 991  win= 67.0%  return=  257.30%  maxDD=  6.0%  avgHold= 3.1d  profit=  257303  util= 8.2%
+  Aggressive-Open       trades=2097  win= 79.7%  return= 1157.04%  maxDD=  4.1%  avgHold= 3.1d  profit= 1157036  util=17.3%
+  HighFreq              trades=9909  win= 66.4%  return= 1059.56%  maxDD=  4.0%  avgHold= 3.1d  profit= 1059558  util=40.9%
+  LowThresh-Safe        trades=1037  win= 66.1%  return=  111.71%  maxDD=  6.8%  avgHold= 3.0d  profit=  111714  util= 4.3%
+
+==================================================================================================================================
+10. TOP INSTRUMENTS BY TRADE COUNT (threshold=5%, slip=0.3%, tov>=500万, exclQDII=F, reqSub=T)
+==================================================================================================================================
+Total: 341 trades across 75 instruments
+    code                   name    n      W/L    profit   avgPnL  avgPrem   maxLoss  avgHold
+  161128              标普信息科技LOF   32  32/  0     21505      672     7.8%       112    3.2d
+  161116                黄金主题LOF   11  10/  1     13981     1271    23.6%       -69    2.6d
+  161129               原油LOF易方达    9  9/  0     13392     1488    20.3%       226    3.0d
+  501300                 美元债LOF   21  21/  0     12930      616     6.9%       292    2.7d
+  162719                  石油LOF   16  12/  4      9360      585    10.4%      -743    2.9d
+  160416                石油基金LOF    8  8/  0      9188     1149    13.8%        29    4.0d
+  501018                南方原油LOF   12  11/  1      9078      756     9.6%      -682    3.6d
+  501312                海外科技LOF   20  16/  4      8444      422     7.4%      -292    2.7d
+  161124                港股小盘LOF    4  2/  2      6991     1748    25.5%      -162    3.2d
+  164824                印度基金LOF   11  11/  0      6913      628     7.5%        16    2.9d
+  160125                南方香港LOF    5  4/  1      6658     1332    16.3%       -59    4.4d
+  163208              全球油气能源LOF   10  7/  3      5131      513    16.9%      -281    2.6d
+  501225                全球芯片LOF   11  9/  2      4778      434     7.6%     -1009    4.0d
+  160216                国泰商品LOF    8  3/  5      3377      422    11.1%      -247    2.6d
+  162411                华宝油气LOF   23  16/  7      3254      141     7.1%      -681    2.8d
+  161815                 抗通胀LOF   11  5/  6      3153      287    10.5%      -417    2.9d
+  164701                  黄金LOF    7  4/  3      2914      416    11.2%     -1290    2.7d
+  161125               标普500LOF    5  5/  0      2730      546    11.6%        99    3.2d
+  161631                人工智能LOF    2  1/  1      2632     1316    14.9%      -146    3.0d
+  161127              标普生物科技LOF    6  5/  1      2186      364     6.1%      -130    2.7d
+  160723                嘉实原油LOF    6  5/  1      2175      363     9.4%      -370    2.7d
+  164906               中概互联网LOF    8  6/  2      2024      253     6.3%      -821    3.0d
+  165513              中信保诚商品LOF    5  2/  3      1534      307    13.2%      -317    2.6d
+  501310                价值基金LOF    2  1/  1      1159      579     9.5%       -21    3.0d
+  161130             纳斯达克100LOF    3  3/  0       991      330     7.0%       111    3.3d
+  501302              恒生指数基金LOF    1  1/  0       906      906    10.6%       906    5.0d
+  160719                嘉实黄金LOF    5  2/  3       867      173     8.1%      -188    2.4d
+  168204                  煤炭LOF    2  2/  0       833      416     8.7%       136    2.0d
+  501011                中药基金LOF    5  2/  3       806      161     7.6%      -396    2.8d
+  161123                并购重组LOF    4  2/  2       793      198     8.4%      -188    3.8d
+  160221                有色金属LOF    1  1/  0       683      683     9.1%       683    2.0d
+  160644               港美互联网LOF    3  1/  2       595      198     8.1%      -184    2.7d
+  501306              港股高股息LOFC    2  1/  1       585      292     9.5%      -173    3.5d
+  501305               港股高股息LOF    2  1/  1       566      283     9.6%      -177    3.5d
+  161810                银华内需LOF    1  1/  0       551      551     5.3%       551    2.0d
+  165520                  有色LOF    2  1/  1       449      224     7.1%      -235    2.0d
+  167001                  鼎泰LOF    1  1/  0       378      378     5.8%       378    4.0d
+  161217                国投资源LOF    2  1/  1       378      189     9.5%      -324    3.0d
+  501012               中药基金LOFC    2  2/  0       373      186    15.5%         3    3.0d
+  165525                基建工程LOF    1  1/  0       352      352     5.0%       352    2.0d
+
+==================================================================================================================================
+11. LOSS PATTERN ANALYSIS (threshold=3%, slip=0.3%, tov>=100万, exclQDII=F, reqSub=T)
+==================================================================================================================================
+Winners: 664  avg=494  avgPrem=7.2%
+Losers:  327  avg=-217  avgPrem=6.0%
+
+Loss concentration by month (top 10):
+  2025-04  count= 29  totalLoss=   -8540
+  2026-01  count= 28  totalLoss=  -12333
+  2021-07  count= 15  totalLoss=   -4224
+  2022-06  count= 15  totalLoss=   -5128
+  2024-09  count= 13  totalLoss=   -4448
+  2025-10  count= 13  totalLoss=   -1806
+  2025-12  count= 13  totalLoss=   -1924
+  2022-03  count= 11  totalLoss=   -3083
+  2022-04  count= 10  totalLoss=   -2475
+  2024-12  count=  9  totalLoss=   -1012
+
+Top 20 worst individual losses:
+  160216              国泰商品LOF 2026-01-29 -> 2026-02-02  prem=  3.7%  PnL=  -1409 (-14.1%)  hold=4d
+  160719              嘉实黄金LOF 2026-01-29 -> 2026-02-02  prem=  4.2%  PnL=  -1362 (-13.6%)  hold=4d
+  164701                黄金LOF 2026-01-29 -> 2026-02-02  prem=  8.0%  PnL=  -1290 (-12.9%)  hold=4d
+  160620                资源LOF 2026-01-29 -> 2026-02-02  prem= 10.0%  PnL=  -1130 (-11.3%)  hold=4d
+  160924              恒生指数LOF 2025-04-02 -> 2025-04-07  prem=  3.4%  PnL=  -1102 (-11.0%)  hold=5d
+  501312              海外科技LOF 2024-08-01 -> 2024-08-05  prem=  3.7%  PnL=  -1042 (-10.4%)  hold=4d
+  501225              全球芯片LOF 2024-08-01 -> 2024-08-05  prem=  6.2%  PnL=  -1009 (-10.1%)  hold=4d
+  160416              石油基金LOF 2025-04-03 -> 2025-04-08  prem=  3.4%  PnL=   -941 ( -9.4%)  hold=5d
+  501301              香港大盘LOF 2025-04-02 -> 2025-04-07  prem=  5.2%  PnL=   -912 ( -9.1%)  hold=5d
+  160644             港美互联网LOF 2025-04-03 -> 2025-04-08  prem=  3.2%  PnL=   -891 ( -8.9%)  hold=5d
+  164906             中概互联网LOF 2021-07-23 -> 2021-07-27  prem=  5.9%  PnL=   -821 ( -8.2%)  hold=4d
+  160632                 酒LOF 2024-09-30 -> 2024-10-09  prem=  3.2%  PnL=   -798 ( -8.0%)  hold=9d
+  160218               房地产LOF 2024-09-30 -> 2024-10-09  prem=  3.1%  PnL=   -763 ( -7.6%)  hold=9d
+  501311            港股通新经济LOF 2025-04-02 -> 2025-04-07  prem= 10.8%  PnL=   -743 ( -7.4%)  hold=5d
+  162719                石油LOF 2022-06-16 -> 2022-06-20  prem=  5.7%  PnL=   -743 ( -7.4%)  hold=4d
+  163208            全球油气能源LOF 2022-06-16 -> 2022-06-20  prem=  3.7%  PnL=   -716 ( -7.2%)  hold=4d
+  161028              新能源车LOF 2021-07-15 -> 2021-07-19  prem=  6.9%  PnL=   -704 ( -7.0%)  hold=4d
+  501018              南方原油LOF 2025-06-23 -> 2025-06-25  prem=  8.6%  PnL=   -682 ( -6.8%)  hold=2d
+  162411              华宝油气LOF 2022-06-16 -> 2022-06-20  prem=  6.3%  PnL=   -681 ( -6.8%)  hold=4d
+  161124              港股小盘LOF 2026-01-29 -> 2026-02-02  prem=  4.6%  PnL=   -611 ( -6.1%)  hold=4d
+
+==================================================================================================================================
+12. YEARLY BREAKDOWN (threshold=5%, slip=0.3%, tov>=500万, exclQDII=F, reqSub=T)
+==================================================================================================================================
+  2021  trades= 17  W/L=10/7  profit=    1354  avgPrem=  9.2%
+  2022  trades= 41  W/L=25/16  profit=   23257  avgPrem=  9.2%
+  2023  trades= 13  W/L=11/2  profit=    7366  avgPrem=  8.6%
+  2024  trades= 71  W/L=59/12  profit=  142490  avgPrem=  9.8%
+  2025  trades=137  W/L=98/39  profit=  504757  avgPrem= 10.3%
+  2026  trades= 48  W/L=37/11  profit=  490266  avgPrem= 10.6%
+
+
+Done.

@@ -1,0 +1,152 @@
+========================================================================================================================
+PHASE 1: PREMIUM THRESHOLD SWEEP (all LOFs, excludeQDII, requireSubscribe, slippage=0.3%)
+========================================================================================================================
+  threshold= 2%  trades= 179  win= 49.7%  return=   314.4%  maxDD=  7.7%  avgHold= 3.0d  fees=    6639  util= 3.7%
+  threshold= 3%  trades= 131  win= 52.7%  return=   233.8%  maxDD=  7.1%  avgHold= 3.1d  fees=    4671  util= 2.6%
+  threshold= 5%  trades=  85  win= 56.5%  return=   240.2%  maxDD=  5.7%  avgHold= 3.2d  fees=    3348  util= 1.9%
+  threshold= 8%  trades=  57  win= 57.9%  return=   253.6%  maxDD=  5.1%  avgHold= 3.3d  fees=    2405  util= 1.3%
+  threshold=10%  trades=  47  win= 53.2%  return=   221.6%  maxDD=  7.7%  avgHold= 3.5d  fees=    1936  util= 1.1%
+  threshold=15%  trades=  32  win= 65.6%  return=   195.5%  maxDD=  7.7%  avgHold= 3.3d  fees=    1457  util= 0.8%
+  threshold=20%  trades=  19  win= 78.9%  return=   137.1%  maxDD=  4.6%  avgHold= 3.2d  fees=     735  util= 0.4%
+  threshold=25%  trades=   9  win=100.0%  return=   116.8%  maxDD=  4.6%  avgHold= 2.7d  fees=     416  util= 0.2%
+  threshold=30%  trades=   7  win=100.0%  return=   103.5%  maxDD=  5.5%  avgHold= 2.6d  fees=     303  util= 0.2%
+
+========================================================================================================================
+PHASE 2: SLIPPAGE SENSITIVITY (all LOFs, threshold=10%)
+========================================================================================================================
+  slippage=0.0%  trades=  47  win= 59.6%  return=   230.6%  maxDD=  7.6%  avgHold= 3.5d  fees=    1969  util= 1.1%
+  slippage=0.1%  trades=  47  win= 57.4%  return=   227.6%  maxDD=  7.6%  avgHold= 3.5d  fees=    1958  util= 1.1%
+  slippage=0.3%  trades=  47  win= 53.2%  return=   221.6%  maxDD=  7.7%  avgHold= 3.5d  fees=    1936  util= 1.1%
+  slippage=0.5%  trades=  47  win= 48.9%  return=   215.7%  maxDD=  7.7%  avgHold= 3.5d  fees=    1914  util= 1.1%
+  slippage=1.0%  trades=  47  win= 48.9%  return=   201.6%  maxDD=  8.1%  avgHold= 3.5d  fees=    1860  util= 1.0%
+  slippage=2.0%  trades=  47  win= 46.8%  return=   175.0%  maxDD=  9.0%  avgHold= 3.5d  fees=    1759  util= 1.0%
+  slippage=3.0%  trades=  47  win= 42.6%  return=   150.8%  maxDD=  9.8%  avgHold= 3.5d  fees=    1664  util= 0.9%
+
+========================================================================================================================
+PHASE 3: TURNOVER FILTER (all LOFs, threshold=10%, slippage=0.3%)
+========================================================================================================================
+  turnover>=    0wan  trades= 301  win= 65.1%  return=  1215.5%  maxDD=  8.3%  avgHold= 3.0d  fees=   25528  util=14.4%
+  turnover>=  100wan  trades=  88  win= 61.4%  return=   301.3%  maxDD=  8.4%  avgHold= 3.1d  fees=    3764  util= 2.1%
+  turnover>=  300wan  trades=  56  win= 58.9%  return=   251.8%  maxDD= 10.2%  avgHold= 3.5d  fees=    2381  util= 1.3%
+  turnover>=  500wan  trades=  47  win= 53.2%  return=   221.6%  maxDD=  7.7%  avgHold= 3.5d  fees=    1936  util= 1.1%
+  turnover>= 1000wan  trades=  36  win= 61.1%  return=   224.6%  maxDD=  7.9%  avgHold= 3.3d  fees=    1684  util= 0.9%
+  turnover>= 2000wan  trades=  26  win= 76.9%  return=   236.2%  maxDD=  4.4%  avgHold= 3.0d  fees=    1271  util= 0.7%
+  turnover>= 5000wan  trades=  20  win= 90.0%  return=   233.0%  maxDD=  2.9%  avgHold= 3.0d  fees=    1008  util= 0.5%
+
+========================================================================================================================
+PHASE 4: PER-TRADE AMOUNT (all LOFs, threshold=10%, slippage=0.3%)
+========================================================================================================================
+  perTrade= auto   trades=  47  win= 53.2%  return=   221.6%  maxDD=  7.7%  avgHold= 3.5d  fees=    1936  util= 1.1%
+  perTrade=  1000  trades=  47  win= 53.2%  return=     6.0%  maxDD=  0.8%  avgHold= 3.5d  fees=      70  util= 0.0%
+  perTrade=  5000  trades=  47  win= 53.2%  return=    30.2%  maxDD=  3.5%  avgHold= 3.5d  fees=     348  util= 0.2%
+  perTrade= 10000  trades=  47  win= 53.2%  return=    60.5%  maxDD=  6.2%  avgHold= 3.5d  fees=     697  util= 0.4%
+  perTrade= 20000  trades=  45  win= 53.3%  return=   113.9%  maxDD= 11.2%  avgHold= 3.6d  fees=    1334  util= 0.7%
+  perTrade= 50000  trades=  43  win= 58.1%  return=   305.8%  maxDD= 22.5%  avgHold= 3.4d  fees=    3066  util= 1.7%
+
+========================================================================================================================
+PHASE 5: SUBSCRIBE FILTER EFFECT (threshold=10%)
+========================================================================================================================
+  requireSub=True   trades=  47  win= 53.2%  return=   221.6%  maxDD=  7.7%  avgHold= 3.5d  fees=    1936  util= 1.1%
+  requireSub=False  trades=  81  win= 71.6%  return=  1924.9%  maxDD=  2.5%  avgHold= 3.3d  fees=   10641  util= 5.8%
+
+========================================================================================================================
+PHASE 6: EXCLUDE QDII EFFECT (threshold=10%)
+========================================================================================================================
+  excludeQDII=True   trades=  47  win= 53.2%  return=   221.6%  maxDD=  7.7%  avgHold= 3.5d  fees=    1936  util= 1.1%
+  excludeQDII=False  trades= 139  win= 67.6%  return=   864.7%  maxDD=  7.2%  avgHold= 3.2d  fees=    9666  util= 5.4%
+
+========================================================================================================================
+PHASE 7: ROBUSTNESS - DIFFERENT TIME PERIODS (threshold=10%, slippage=0.3%)
+========================================================================================================================
+  2021H2-2022H1    trades=   6  win= 33.3%  return=    -1.3%  maxDD=  8.6%  avgHold= 3.3d  fees=     167  util= 0.4%
+  2022H2-2023      trades=   0  win=  0.0%  return=     0.0%  maxDD=  0.0%  avgHold= 0.0d  fees=       0  util= 0.0%
+  2024-2025H1      trades=  10  win= 20.0%  return=     0.2%  maxDD=  7.8%  avgHold= 4.8d  fees=     245  util= 0.5%
+  2025H2-2026      trades=  31  win= 67.7%  return=   225.2%  maxDD=  7.7%  avgHold= 3.2d  fees=    1545  util= 5.1%
+  First half       trades=   6  win= 33.3%  return=    -1.3%  maxDD=  8.6%  avgHold= 3.3d  fees=     167  util= 0.2%
+  Second half      trades=  41  win= 56.1%  return=   225.8%  maxDD=  7.7%  avgHold= 3.6d  fees=    1792  util= 2.1%
+  FULL 5yr         trades=  47  win= 53.2%  return=   221.6%  maxDD=  7.7%  avgHold= 3.5d  fees=    1936  util= 1.1%
+
+========================================================================================================================
+PHASE 8: TRADE DETAIL - TOP INSTRUMENTS BY TRADE COUNT
+========================================================================================================================
+Total trades: 87, Instruments with trades: 42
+  161226 国投白银LOF               n= 23  W/L=22/1  profit=   64698  avgPnL=   2813  avgPrem= 21.7%  maxLoss=   -294
+  501011 中药基金LOF               n=  5  W/L=2/3  profit=     806  avgPnL=    161  avgPrem=  7.6%  maxLoss=   -396
+  161123 并购重组LOF               n=  4  W/L=2/2  profit=     793  avgPnL=    198  avgPrem=  8.4%  maxLoss=   -188
+  501301 香港大盘LOF               n=  3  W/L=1/2  profit=   -1035  avgPnL=   -345  avgPrem=  7.0%  maxLoss=   -912
+  501307 沪港深红利LOF              n=  3  W/L=0/3  profit=    -578  avgPnL=   -193  avgPrem= 11.2%  maxLoss=   -300
+  501227 泓德红利优选LOF             n=  3  W/L=1/2  profit=     -24  avgPnL=     -8  avgPrem=  6.3%  maxLoss=   -116
+  161715 大宗商品LOF               n=  3  W/L=1/2  profit=     109  avgPnL=     36  avgPrem= 10.8%  maxLoss=   -415
+  501012 中药基金LOFC              n=  2  W/L=2/0  profit=     373  avgPnL=    186  avgPrem= 15.5%  maxLoss=      3
+  161028 新能源车LOF               n=  2  W/L=1/1  profit=    -312  avgPnL=   -156  avgPrem=  8.1%  maxLoss=   -704
+  160643 空天军工LOF               n=  2  W/L=1/1  profit=     233  avgPnL=    116  avgPrem=  7.4%  maxLoss=   -129
+  501310 价值基金LOF               n=  2  W/L=1/1  profit=     189  avgPnL=     94  avgPrem=  9.8%  maxLoss=   -990
+  161631 人工智能LOF               n=  2  W/L=1/1  profit=    2632  avgPnL=   1316  avgPrem= 14.9%  maxLoss=   -146
+  165520 有色LOF                 n=  2  W/L=1/1  profit=     449  avgPnL=    224  avgPrem=  7.1%  maxLoss=   -235
+  161217 国投资源LOF               n=  2  W/L=1/1  profit=     378  avgPnL=    189  avgPrem=  9.5%  maxLoss=   -324
+  168204 煤炭LOF                 n=  2  W/L=2/0  profit=     833  avgPnL=    416  avgPrem=  8.7%  maxLoss=    136
+  501058 新能源车LOFC              n=  1  W/L=0/1  profit=    -279  avgPnL=   -279  avgPrem=  6.4%  maxLoss=   -279
+  161037 高端制造LOF               n=  1  W/L=1/0  profit=      77  avgPnL=     77  avgPrem= 20.6%  maxLoss=     77
+  501030 环境治理LOF               n=  1  W/L=0/1  profit=    -140  avgPnL=   -140  avgPrem=  7.8%  maxLoss=   -140
+  163402 兴全趋势LOF               n=  1  W/L=0/1  profit=    -230  avgPnL=   -230  avgPrem= 18.1%  maxLoss=   -230
+  160632 酒LOF                  n=  1  W/L=0/1  profit=     -95  avgPnL=    -95  avgPrem= 10.2%  maxLoss=    -95
+  167001 鼎泰LOF                 n=  1  W/L=1/0  profit=     378  avgPnL=    378  avgPrem=  5.8%  maxLoss=    378
+  161903 万家行业优选LOF             n=  1  W/L=1/0  profit=      28  avgPnL=     28  avgPrem=  6.6%  maxLoss=     28
+  162412 医疗基金LOF               n=  1  W/L=0/1  profit=     -59  avgPnL=    -59  avgPrem=  5.4%  maxLoss=    -59
+  501036 中证500LOF              n=  1  W/L=0/1  profit=    -331  avgPnL=   -331  avgPrem= 11.2%  maxLoss=   -331
+  501060 金选300A类LOF            n=  1  W/L=0/1  profit=    -485  avgPnL=   -485  avgPrem= 14.0%  maxLoss=   -485
+  160223 创业板LOF                n=  1  W/L=1/0  profit=     220  avgPnL=    220  avgPrem=  6.9%  maxLoss=    220
+  163407 兴全沪深300LOF            n=  1  W/L=0/1  profit=    -657  avgPnL=   -657  avgPrem=  5.9%  maxLoss=   -657
+  502048 上证50LOF               n=  1  W/L=0/1  profit=    -524  avgPnL=   -524  avgPrem=  9.8%  maxLoss=   -524
+  501089 消费红利增强LOF             n=  1  W/L=0/1  profit=    -317  avgPnL=   -317  avgPrem=  5.8%  maxLoss=   -317
+  164403 农业精选LOF               n=  1  W/L=0/1  profit=     -12  avgPnL=    -12  avgPrem= 14.3%  maxLoss=    -12
+
+========================================================================================================================
+PHASE 9: STRATEGY PROFILES - RECOMMENDED CONFIGS
+========================================================================================================================
+  Ultra-Conservative      trades=  17  win= 70.6%  return=    22.6%  maxDD=  1.8%  avgHold= 3.2d  fees=     129  util= 0.1%
+  Conservative            trades=  32  win= 65.6%  return=    57.9%  maxDD=  6.6%  avgHold= 3.3d  fees=     478  util= 0.3%
+  Balanced                trades=  47  win= 53.2%  return=   221.6%  maxDD=  7.7%  avgHold= 3.5d  fees=    1936  util= 1.1%
+  Balanced-NoQDII         trades= 139  win= 67.6%  return=   864.7%  maxDD=  7.2%  avgHold= 3.2d  fees=    9666  util= 5.4%
+  Moderate                trades=  68  win= 61.8%  return=   266.2%  maxDD=  9.3%  avgHold= 3.2d  fees=    2974  util= 1.7%
+  Aggressive              trades= 106  win= 57.5%  return=   290.4%  maxDD=  7.6%  avgHold= 3.2d  fees=    4252  util= 2.4%
+  YOLO                    trades=4697  win= 78.3%  return=29063155652.0%  maxDD=  2.0%  avgHold= 3.1d  fees=352611994552  util=197150890.7%
+
+========================================================================================================================
+PHASE 10: BEST CONFIG ROBUSTNESS CHECK
+========================================================================================================================
+  2021H2-2022H1    trades=   6  winRate= 33.3%  return=    -1.3%  maxDD=  8.6%
+  2022H2-2023      trades=   0  winRate=  0.0%  return=     0.0%  maxDD=  0.0%
+  2024-2025H1      trades=  10  winRate= 20.0%  return=     0.2%  maxDD=  7.8%
+  2025H2-2026      trades=  31  winRate= 67.7%  return=   225.2%  maxDD=  7.7%
+  First half       trades=   6  winRate= 33.3%  return=    -1.3%  maxDD=  8.6%
+  Second half      trades=  41  winRate= 56.1%  return=   225.8%  maxDD=  7.7%
+  FULL 5yr         trades=  47  winRate= 53.2%  return=   221.6%  maxDD=  7.7%
+
+========================================================================================================================
+PHASE 11: LOSS ANALYSIS - EXAMINE LOSING TRADES
+========================================================================================================================
+Total trades: 1295, Losers: 451
+  160805 长盛同智LOF              2021-12-17 -> 2021-12-21  prem=  5.7%  PnL=   -1829 (-18.3%)  hold=4d
+  160620 资源LOF                2026-01-29 -> 2026-02-02  prem= 10.0%  PnL=   -1130 (-11.3%)  hold=4d
+  501310 价值基金LOF              2025-04-03 -> 2025-04-08  prem=  5.7%  PnL=    -990 ( -9.9%)  hold=5d
+  501301 香港大盘LOF              2025-04-02 -> 2025-04-07  prem=  5.2%  PnL=    -912 ( -9.1%)  hold=5d
+  501089 消费红利增强LOF            2022-04-21 -> 2022-04-25  prem=  6.4%  PnL=    -785 ( -7.8%)  hold=4d
+  163111 申万中小LOF              2022-03-11 -> 2022-03-15  prem=  7.1%  PnL=    -746 ( -7.5%)  hold=4d
+  161028 新能源车LOF              2021-07-15 -> 2021-07-19  prem=  6.9%  PnL=    -704 ( -7.0%)  hold=4d
+  160615 鹏华300LOF             2024-10-08 -> 2024-10-10  prem=  9.3%  PnL=    -689 ( -6.9%)  hold=2d
+  163110 申万量化LOF              2025-04-03 -> 2025-04-08  prem=  6.5%  PnL=    -683 ( -6.8%)  hold=5d
+  161133 优势回报FOF-LOF          2024-10-08 -> 2024-10-11  prem=  6.1%  PnL=    -676 ( -6.8%)  hold=3d
+  161811 沪深300LOF银华           2024-10-08 -> 2024-10-10  prem= 10.2%  PnL=    -672 ( -6.7%)  hold=2d
+  163407 兴全沪深300LOF           2024-10-08 -> 2024-10-10  prem=  5.9%  PnL=    -657 ( -6.6%)  hold=2d
+  166107 多因子LOF               2024-01-18 -> 2024-01-22  prem=  5.5%  PnL=    -625 ( -6.2%)  hold=4d
+  167506 安信深圳科技LOF            2022-04-21 -> 2022-04-25  prem=  5.2%  PnL=    -603 ( -6.0%)  hold=4d
+  167001 鼎泰LOF                2024-10-09 -> 2024-10-11  prem=  5.1%  PnL=    -600 ( -6.0%)  hold=2d
+  501043 沪深300LOF             2024-10-08 -> 2024-10-10  prem=  6.3%  PnL=    -549 ( -5.5%)  hold=2d
+  165508 中信保诚深度LOF            2022-03-07 -> 2022-03-09  prem=  5.9%  PnL=    -546 ( -5.5%)  hold=2d
+  502048 上证50LOF              2024-10-08 -> 2024-10-10  prem=  9.8%  PnL=    -524 ( -5.2%)  hold=2d
+  501019 军工基金LOF              2026-03-02 -> 2026-03-04  prem=  7.6%  PnL=    -517 ( -5.2%)  hold=2d
+  168101 九泰锐智LOF              2022-09-27 -> 2022-09-30  prem=  8.9%  PnL=    -503 ( -5.0%)  hold=3d
+
+
+Analysis complete.
