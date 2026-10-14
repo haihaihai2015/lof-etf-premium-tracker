@@ -1,6 +1,20 @@
 target/
 .idea/
 *.iml
+*.DS_Store
+.DS_Store
 
+# 依赖与打包
+node_modules/
 frontend/node_modules/
 frontend/dist/
+*.pkg
+
+# 临时测试与截图脚本
+screenshot_*.js
+screenshot_tmp*.js
+api_test*.json
+api_test*.html
+api_test*.txt
+docker-init/
+*.sql

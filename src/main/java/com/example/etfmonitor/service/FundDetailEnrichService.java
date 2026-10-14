@@ -1,6 +1,7 @@
 package com.example.etfmonitor.service;
 
 import com.example.etfmonitor.entity.InstrumentInfo;
+import com.example.etfmonitor.model.ValuationSnapshot;
 import com.example.etfmonitor.repository.InstrumentInfoRepository;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -12,6 +13,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
@@ -20,9 +22,12 @@ import org.springframework.web.util.UriComponentsBuilder;
 import java.io.IOException;
 import java.net.URI;
 import java.time.Duration;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
@@ -34,6 +39,7 @@ public class FundDetailEnrichService {
     private static final Logger log = LoggerFactory.getLogger(FundDetailEnrichService.class);
 
     private final InstrumentInfoRepository instrumentInfoRepository;
+    private final RealtimeStateStore realtimeStateStore;
     private final ObjectMapper objectMapper;
     private final RestTemplate restTemplate;
     private final String providerMode;
@@ -41,6 +47,7 @@ public class FundDetailEnrichService {
     private final int maxDetailFetchPerCycle;
 
     public FundDetailEnrichService(InstrumentInfoRepository instrumentInfoRepository,
+                                    RealtimeStateStore realtimeStateStore,
                                     ObjectMapper objectMapper,
                                     RestTemplateBuilder restTemplateBuilder,
                                     @Value("${app.market.provider-mode:mock}") String providerMode,
@@ -48,6 +55,7 @@ public class FundDetailEnrichService {
                                     @Value("${app.market.eastmoney.timeout-ms}") long timeoutMs,
                                     @Value("${app.market.eastmoney.max-detail-fetch-per-cycle:200}") int maxDetailFetchPerCycle) {
         this.instrumentInfoRepository = instrumentInfoRepository;
+        this.realtimeStateStore = realtimeStateStore;
         this.objectMapper = objectMapper;
         this.providerMode = providerMode;
         this.fundBaseUrl = fundBaseUrl;
@@ -86,6 +94,54 @@ public class FundDetailEnrichService {
         }
         instrumentInfoRepository.saveAll(unenriched);
         log.info("Enriched {}/{} instruments with fund details.", enriched, unenriched.size());
+    }
+
+    /**
+     * 刷新溢价率最高的 TOP_N 只基金的申购/赎回状态
+     */
+    private static final int TOP_N = 20;
+
+    @Scheduled(cron = "0 30 15 * * MON-FRI") // 每个交易日 15:30
+    public void refreshSubscribeStatus() {
+        if (!"real".equalsIgnoreCase(providerMode)) {
+            return;
+        }
+
+        // 从 RealtimeStateStore 获取所有基金的估值数据，按溢价率排序取 TOP_N
+        Map<String, ValuationSnapshot> valuations = realtimeStateStore.allValuations();
+        if (valuations.isEmpty()) {
+            log.info("No valuation data available, skipping status refresh.");
+            return;
+        }
+
+        List<String> topCodes = valuations.entrySet().stream()
+            .filter(e -> e.getValue() != null && e.getValue().premiumRate() != null)
+            .sorted(Map.Entry.<String, ValuationSnapshot>comparingByValue(
+                Comparator.comparingDouble((ValuationSnapshot v) -> v.premiumRate()).reversed()
+            ).thenComparing(Map.Entry.comparingByKey()))
+            .limit(TOP_N)
+            .map(Map.Entry::getKey)
+            .collect(Collectors.toList());
+
+        if (topCodes.isEmpty()) {
+            log.info("No instruments with premium data, skipping status refresh.");
+            return;
+        }
+
+        log.info("Refreshing subscribe/redeem status for top {} premium instruments: {}", topCodes.size(), topCodes);
+        List<InstrumentInfo> targets = instrumentInfoRepository.findAllById(topCodes);
+        int refreshed = 0;
+        for (InstrumentInfo instrument : targets) {
+            try {
+                if (enrichFromApi(instrument, false)) {
+                    refreshed++;
+                }
+            } catch (Exception ex) {
+                log.warn("Failed to refresh {}: {}", instrument.getCode(), ex.getMessage());
+            }
+        }
+        instrumentInfoRepository.saveAll(targets);
+        log.info("Refreshed subscribe/redeem status for {}/{} instruments.", refreshed, targets.size());
     }
 
     private boolean enrichFromApi(InstrumentInfo instrument, boolean logFields) {

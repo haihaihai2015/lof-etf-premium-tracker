@@ -47,4 +47,8 @@ public class RealtimeStateStore {
     public Collection<QuoteSnapshot> allQuotes() {
         return quotes.values();
     }
+
+    public Map<String, ValuationSnapshot> allValuations() {
+        return valuations;
+    }
 }
